@@ -13,7 +13,7 @@ A command-line interface tool that converts Spotify playlists to Tidal playlists
 To install the CLI tool, clone the repository and install the dependencies:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/urre/spotify-to-tidal-cli
 cd spotify-to-tidal-cli
 npm install
 ```
@@ -23,16 +23,28 @@ npm install
 To use the CLI tool, run the following command:
 
 ```bash
-npm start <spotify-playlist-url>
+npm start <spotify-playlist-url> [playlist-name]
 ```
 
 or
 
 ```bash
-node bin/cli.js <spotify-playlist-url>
+node bin/cli.js <spotify-playlist-url> [playlist-name]
 ```
 
 Replace `<spotify-playlist-url>` with the URL of the Spotify playlist you want to convert.
+
+Optionally, provide `[playlist-name]` to specify a custom name for the Tidal playlist. If not provided, the playlist will be named "Converted Playlist".
+
+### Examples
+
+```bash
+# Convert with custom playlist name
+node bin/cli.js "https://open.spotify.com/playlist/..." "My Favorite Songs"
+
+# Convert with default name
+node bin/cli.js "https://open.spotify.com/playlist/..."
+```
 
 ## Configuration
 

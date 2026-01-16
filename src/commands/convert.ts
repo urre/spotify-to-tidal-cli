@@ -2,7 +2,7 @@ import SpotifyService from '../services/spotify';
 import TidalService from '../services/tidal';
 import { Track } from '../types';
 
-export async function convertPlaylist(spotifyUrl: string): Promise<void> {
+export async function convertPlaylist(spotifyUrl: string, playlistName?: string): Promise<void> {
     const spotifyService = new SpotifyService();
     const tidalService = new TidalService();
 
@@ -15,7 +15,8 @@ export async function convertPlaylist(spotifyUrl: string): Promise<void> {
         console.log(`Found ${tracks.length} tracks`);
 
         // Convert and create the playlist in Tidal
-        await tidalService.createPlaylist('Converted Playlist', tracks);
+        const tidalPlaylistName = playlistName || 'Converted Playlist';
+        await tidalService.createPlaylist(tidalPlaylistName, tracks);
 
     } catch (error) {
         if (error instanceof Error) {

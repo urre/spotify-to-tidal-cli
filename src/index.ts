@@ -7,9 +7,10 @@ program
   .version('1.0.0')
   .description('Convert Spotify playlists to Tidal playlists')
   .argument('<spotifyUrl>', 'Spotify playlist URL')
-  .action(async (spotifyUrl) => {
+  .argument('[playlistName]', 'Name for the Tidal playlist (optional)')
+  .action(async (spotifyUrl, playlistName) => {
     try {
-      await convertPlaylist(spotifyUrl);
+      await convertPlaylist(spotifyUrl, playlistName);
       console.log('\n✓ Playlist converted successfully!');
     } catch (error) {
       if (error instanceof Error) {
