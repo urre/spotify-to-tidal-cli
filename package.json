@@ -1,0 +1,33 @@
+{
+  "name": "spotify-to-tidal-cli",
+  "version": "1.0.0",
+  "description": "A command-line tool to convert Spotify playlists to Tidal playlists.",
+  "main": "bin/cli.js",
+  "scripts": {
+    "start": "npm run build && node bin/cli.js",
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "commander": "^8.0.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.18.0",
+    "open": "^8.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "@types/node": "^14.0.0",
+    "@types/express": "^4.17.0"
+  },
+  "keywords": [
+    "spotify",
+    "tidal",
+    "cli",
+    "playlist",
+    "converter"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
